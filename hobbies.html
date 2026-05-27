@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies — Ayush Shah</title>
+  <link rel="icon" href="profile1.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .hobby-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+      cursor: default;
+    }
+    .hobby-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 0;
+      background: linear-gradient(180deg, transparent, rgba(0,212,255,0.04));
+      transition: height var(--transition);
+    }
+    .hobby-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,212,255,0.1);
+    }
+    .hobby-card:hover::after { height: 100%; }
+
+    .hobby-emoji {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+      transition: transform var(--transition);
+    }
+    .hobby-card:hover .hobby-emoji { transform: scale(1.15); }
+
+    .hobby-name {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 0.5rem;
+    }
+    .hobby-desc {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .fun-fact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .fun-fact-card p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .fun-fact-card strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="index.html" class="nav-brand">AYUSH<span>.SHAH</span></a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header">
+      <p class="breadcrumb"><a href="index.html">home</a> / hobbies</p>
+      <h1>Beyond the <span class="accent">Screen</span></h1>
+      <p>// interests, activities &amp; what keeps me going</p>
+    </div>
+
+    <div class="content">
+      <div class="hobby-grid">
+        <div class="hobby-card animate-up">
+          <span class="hobby-emoji">✈️</span>
+          <div class="hobby-name">Traveling</div>
+          <div class="hobby-desc">Exploring new cities and cultures — from Ahmedabad to Toronto and beyond.</div>
+        </div>
+        <div class="hobby-card animate-up-d1">
+          <span class="hobby-emoji">🚴</span>
+          <div class="hobby-name">Cycling</div>
+          <div class="hobby-desc">Hitting trails and city paths — a great way to clear the mind and stay active.</div>
+        </div>
+        <div class="hobby-card animate-up-d2">
+          <span class="hobby-emoji">👟</span>
+          <div class="hobby-name">Shoe Collection</div>
+          <div class="hobby-desc">Sneaker culture enthusiast — appreciating design, craft, and limited editions.</div>
+        </div>
+        <div class="hobby-card animate-up-d3">
+          <span class="hobby-emoji">🥾</span>
+          <div class="hobby-name">Hiking</div>
+          <div class="hobby-desc">Getting off the beaten path — nature trails and scenic lookouts.</div>
+        </div>
+        <div class="hobby-card animate-up-d4">
+          <span class="hobby-emoji">🎮</span>
+          <div class="hobby-name">Gaming</div>
+          <div class="hobby-desc">Strategic games and RPGs — gaming sharpens problem-solving and reflexes.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem;">
+        <p class="section-title animate-up-d3">// a bit more about me</p>
+        <div class="fun-fact-card animate-up-d4">
+          <p>
+            Outside of IT, I'm someone who loves being on the move — whether that's cycling through Toronto's waterfront, exploring a new hiking trail, or planning the next travel destination. I moved from <strong>Ahmedabad, India</strong> to <strong>Toronto, Canada</strong> to pursue my cloud computing studies, and the experience has pushed me to grow both professionally and personally.
+          </p>
+          <br>
+          <p>
+            I also have a soft spot for sneakers and gaming — I find that both require a similar kind of eye for detail and appreciation for craftsmanship. The same focus I bring to a system troubleshoot, I bring to finding the right pair of kicks or mastering a strategy game.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem;">
+        <a href="contact.html" class="btn btn-primary">Contact Me →</a>
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">© 2025 <a href="index.html">Ayush Shah</a></div>
+    <div class="footer-links">
+      <a href="mailto:ayush28shah@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/beayushman" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

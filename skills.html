@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Ayush Shah</title>
+  <link rel="icon" href="profile1.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category-title {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-item {
+      margin-bottom: 1.1rem;
+    }
+    .skill-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.4rem;
+    }
+    .skill-name {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .skill-name img { width: 16px; height: 16px; object-fit: contain; }
+    .skill-pct {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+    }
+
+    /* Tag cloud section */
+    .tag-cloud {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .skill-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text);
+      background: var(--bg2);
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0,212,255,0.06);
+      transform: translateY(-1px);
+    }
+    .skill-tag .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .skill-tag .dot.green { background: var(--green); }
+    .skill-tag .dot.yellow { background: var(--yellow); }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="index.html" class="nav-brand">AYUSH<span>.SHAH</span></a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header">
+      <p class="breadcrumb"><a href="index.html">home</a> / skills</p>
+      <h1>Technical <span class="accent">Skills</span></h1>
+      <p>// tools, technologies &amp; platforms</p>
+    </div>
+
+    <div class="content">
+      <!-- Core skill bars -->
+      <div class="skills-grid" style="margin-bottom:2.5rem;">
+
+        <!-- Cloud & Infrastructure -->
+        <div class="card animate-up">
+          <div class="skill-category-title">☁️ Cloud &amp; Infrastructure</div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Amazon Web Services (AWS)</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Microsoft Azure</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="82%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Docker</span>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="70%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">AWS CloudFormation</span>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="72%"></div></div>
+          </div>
+        </div>
+
+        <!-- OS & Identity -->
+        <div class="card animate-up-d1">
+          <div class="skill-category-title">🖥️ Operating Systems &amp; Identity</div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Linux (Ubuntu / Kali)</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Windows Server 2019/2022</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Active Directory / Azure AD</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Office 365 Administration</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="82%"></div></div>
+          </div>
+        </div>
+
+        <!-- Networking & Security -->
+        <div class="card animate-up-d2">
+          <div class="skill-category-title">🌐 Networking &amp; Security</div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">TCP/IP, DNS, DHCP, VPN</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Cisco Packet Tracer</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Firewall &amp; System Hardening</span>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="72%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Wireshark / Kali Linux</span>
+              <span class="skill-pct">68%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="68%"></div></div>
+          </div>
+        </div>
+
+        <!-- Scripting & Dev -->
+        <div class="card animate-up-d3">
+          <div class="skill-category-title">⌨️ Scripting &amp; Development</div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Bash / Shell Scripting</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="82%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">MySQL / NoSQL</span>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="72%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML / CSS / PHP</span>
+              <span class="skill-pct">65%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="65%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Git / GitHub</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ITIL / Ticketing -->
+      <div class="card animate-up-d2" style="margin-bottom:2rem;">
+        <p class="section-title">// ticketing &amp; frameworks</p>
+        <div class="tag-cloud">
+          <span class="skill-tag"><span class="dot"></span>ServiceNow</span>
+          <span class="skill-tag"><span class="dot"></span>Jira Service Management</span>
+          <span class="skill-tag"><span class="dot green"></span>ITIL 4 Frameworks</span>
+          <span class="skill-tag"><span class="dot"></span>Incident Management</span>
+          <span class="skill-tag"><span class="dot"></span>Problem Management</span>
+          <span class="skill-tag"><span class="dot green"></span>PDI Technologies</span>
+          <span class="skill-tag"><span class="dot"></span>Root Cause Analysis</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="card animate-up-d3">
+        <p class="section-title">// soft skills</p>
+        <div class="tag-cloud">
+          <span class="skill-tag"><span class="dot yellow"></span>Problem Solving</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Team Collaboration</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Communication</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Time Management</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Work Under Pressure</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Documentation</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Customer Service</span>
+          <span class="skill-tag"><span class="dot yellow"></span>Training &amp; Mentoring</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem;">
+        <a href="experience.html" class="btn btn-primary">View Experience →</a>
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">© 2025 <a href="index.html">Ayush Shah</a></div>
+    <div class="footer-links">
+      <a href="mailto:ayush28shah@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/beayushman" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

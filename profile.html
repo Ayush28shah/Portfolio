@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — Ayush Shah</title>
+  <link rel="icon" href="profile1.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .profile-layout { grid-template-columns: 1fr; } }
+
+    .sidebar-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      position: sticky; top: 80px;
+    }
+    .sidebar-img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+    .sidebar-name {
+      font-family: var(--sans);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 0.25rem;
+    }
+    .sidebar-role {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-info { list-style: none; text-align: left; }
+    .sidebar-info li {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+    }
+    .sidebar-info li:last-child { border-bottom: none; }
+    .info-label { color: var(--text-dim); min-width: 60px; }
+    .info-value { color: var(--text); word-break: break-word; }
+    .info-value a { color: var(--accent); text-decoration: none; }
+    .info-value a:hover { text-decoration: underline; }
+
+    .main-content { display: flex; flex-direction: column; gap: 2rem; }
+
+    .about-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .highlight-quote {
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.5rem;
+      background: rgba(0,212,255,0.04);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 1rem;
+      color: var(--text-bright);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+    .strength-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      transition: all var(--transition);
+    }
+    .strength-item:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0,212,255,0.05);
+    }
+    .strength-item .icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="index.html" class="nav-brand">AYUSH<span>.SHAH</span></a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header">
+      <p class="breadcrumb"><a href="index.html">home</a> / profile</p>
+      <h1>About <span class="accent">Me</span></h1>
+      <p>// personal overview &amp; professional summary</p>
+    </div>
+
+    <div class="content">
+      <div class="profile-layout">
+        <!-- Sidebar -->
+        <aside>
+          <div class="sidebar-card animate-up">
+            <img src="profile1.jpg" alt="Ayush Shah" class="sidebar-img"
+              onerror="this.style.background='var(--bg3)';this.style.display='block';this.removeAttribute('src')">
+            <div class="sidebar-name">Ayush Shah</div>
+            <div class="sidebar-role">IT Support Specialist</div>
+            <ul class="sidebar-info">
+              <li><span class="info-label">Location</span><span class="info-value">Toronto, ON</span></li>
+              <li><span class="info-label">Phone</span><span class="info-value"><a href="tel:+17802032648">+1 780-203-2648</a></span></li>
+              <li><span class="info-label">Email</span><span class="info-value"><a href="mailto:ayush28shah@gmail.com">ayush28shah@gmail.com</a></span></li>
+              <li><span class="info-label">LinkedIn</span><span class="info-value"><a href="https://linkedin.com/in/beayushman" target="_blank">beayushman</a></span></li>
+              <li><span class="info-label">GitHub</span><span class="info-value"><a href="https://github.com/Ayush28shah" target="_blank">Ayush28shah</a></span></li>
+              <li><span class="info-label">Status</span><span class="info-value" style="color:var(--green)">● Open to Work</span></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+          <div class="card animate-up-d1">
+            <p class="section-title">// about me</p>
+            <div class="about-text">
+              <div class="highlight-quote">
+                "I became interested in technology because I was curious about how things operated behind the scenes — and I've never stopped asking how to make them better."
+              </div>
+              <br>
+              <p>
+                I'm Ayush Shah, an IT Support Specialist currently based in Toronto, Ontario. My journey into tech started with a deep curiosity about the systems that power everyday life — and that curiosity evolved into a career focused on cloud infrastructure, network reliability, and hands-on technical support.
+              </p>
+              <p>
+                I'm currently completing my Graduate Certificate in Cloud Computing at George Brown College (graduating August 2025), specializing in AWS and Microsoft Azure. I've already applied that knowledge in a real-world environment as an IT Support Associate at Circle K, where I've reduced system downtime by 30% and managed incident lifecycles across retail infrastructure.
+              </p>
+              <p>
+                I'm passionate about scalable systems, automation, and the kind of behind-the-scenes work that keeps businesses running smoothly. Cloud computing is always evolving — and I can't wait to grow with it.
+              </p>
+            </div>
+          </div>
+
+          <div class="card animate-up-d2">
+            <p class="section-title">// core strengths</p>
+            <div class="strength-grid">
+              <div class="strength-item"><span class="icon">🔍</span>Root Cause Analysis</div>
+              <div class="strength-item"><span class="icon">☁️</span>Cloud Platforms</div>
+              <div class="strength-item"><span class="icon">🛡️</span>Cybersecurity</div>
+              <div class="strength-item"><span class="icon">🌐</span>Networking</div>
+              <div class="strength-item"><span class="icon">⚙️</span>Automation</div>
+              <div class="strength-item"><span class="icon">🗣️</span>Communication</div>
+              <div class="strength-item"><span class="icon">📋</span>ITIL Frameworks</div>
+              <div class="strength-item"><span class="icon">🐧</span>Linux Admin</div>
+            </div>
+          </div>
+
+          <div class="card animate-up-d3">
+            <p class="section-title">// quick stats</p>
+            <div class="grid-4">
+              <div class="stat-box">
+                <div class="stat-number" data-count="3" data-suffix="+">0+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" data-count="30" data-suffix="%">0%</div>
+                <div class="stat-label">Downtime Reduced</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" data-count="80" data-suffix="+">0+</div>
+                <div class="stat-label">Daily Tickets</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" data-count="4" data-suffix="">0</div>
+                <div class="stat-label">Certifications</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="experience.html" class="btn btn-primary">View Experience →</a>
+            <a href="contact.html" class="btn btn-outline">Contact Me</a>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">© 2025 <a href="index.html">Ayush Shah</a></div>
+    <div class="footer-links">
+      <a href="mailto:ayush28shah@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/beayushman" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
