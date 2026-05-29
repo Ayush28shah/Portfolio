@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Shah — IT Support Specialist</title>
+  <link rel="icon" href="profile1.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: calc(100vh - 60px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; padding-top: 2.5rem; }
+      .hero-right { order: -1; }
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .hero-eyebrow { justify-content: center; }
+      .hero-eyebrow::before { display: none; }
+    }
+
+    .hero h1 {
+      font-family: var(--sans);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--text-bright);
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 .name-accent { color: var(--accent); }
+
+    .hero-role {
+      font-family: var(--mono);
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+      min-height: 1.5em;
+    }
+
+    .hero-summary {
+      font-size: clamp(0.88rem, 1.5vw, 0.95rem);
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) { .hero-summary { margin: 0 auto 2rem; } }
+
+    .hero-cta {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 768px) { .hero-cta { justify-content: center; } }
+
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.25rem;
+      font-family: var(--mono); font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+    @media (max-width: 768px) { .hero-meta { justify-content: center; } }
+    .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .dot-green { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse-glow 2s infinite; }
+
+    /* ── Profile card ── */
+    .profile-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent), var(--green));
+    }
+    .profile-img-wrap {
+      width: 140px; height: 140px;
+      margin: 0 auto 1.25rem;
+      position: relative;
+    }
+    .profile-img-wrap::before {
+      content: '';
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(var(--accent), var(--green), var(--accent2), var(--accent));
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .profile-img-wrap::after {
+      content: '';
+      position: absolute; inset: -1px;
+      border-radius: 50%;
+      background: var(--panel);
+    }
+    .profile-img-wrap img {
+      position: relative; z-index: 1;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .profile-name {
+      font-family: var(--sans);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 0.25rem;
+    }
+    .profile-title {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .profile-stats {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .p-stat { text-align: center; }
+    .p-stat-num {
+      font-family: var(--mono);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .p-stat-lbl {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .profile-location {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    }
+
+    /* ── Nav cards ── */
+    .nav-section {
+      padding: 0 clamp(1rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .nav-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .nav-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      text-decoration: none;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+      cursor: pointer;
+    }
+    .nav-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(0,212,255,0.06) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .nav-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,212,255,0.1);
+    }
+    .nav-card:hover::after { opacity: 1; }
+    .nav-card-icon {
+      font-size: 1.5rem;
+      width: 42px; height: 42px;
+      background: rgba(0,212,255,0.08);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-card-title {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+    .nav-card-desc {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .nav-card-arrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all var(--transition);
+      margin-top: auto;
+    }
+    .nav-card:hover .nav-card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-brand">AYUSH<span>.SHAH</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="assignments.html">Assignments</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <div class="page-wrapper">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left animate-up">
+        <p class="hero-eyebrow">IT Support Specialist</p>
+        <h1>Hi, I'm <span class="name-accent">Ayush</span><br>Shah</h1>
+        <p class="hero-role cursor-blink">Cloud Computing &amp; IT Infrastructure</p>
+        <p class="hero-summary">
+          Detail-oriented IT Support Specialist with 3+ years of hands-on experience managing IT infrastructure, troubleshooting network and POS systems, and supporting cloud environments across AWS and Azure. Based in Toronto, ON.
+        </p>
+        <div class="hero-cta">
+          <a href="experience.html" class="btn btn-primary">View Experience →</a>
+          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="dot-green"></span> Open to Opportunities</span>
+          <span>📍 Toronto, ON</span>
+          <span>🎓 George Brown College</span>
+        </div>
+      </div>
+
+      <div class="hero-right animate-up-d2">
+        <div class="profile-card">
+          <div class="profile-img-wrap">
+            <img src="profile1.jpg" alt="Ayush Shah" onerror="this.style.background='var(--bg3)';this.removeAttribute('src')">
+          </div>
+          <div class="profile-name">Ayush Shah</div>
+          <div class="profile-title">IT Support Specialist</div>
+          <div class="profile-stats">
+            <div class="p-stat">
+              <div class="p-stat-num">4</div>
+              <div class="p-stat-lbl">Certifications</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat-num">2</div>
+              <div class="p-stat-lbl">Cloud Platforms</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat-num">3</div>
+              <div class="p-stat-lbl">Degrees</div>
+            </div>
+          </div>
+          <div class="profile-location">
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M5 0C2.24 0 0 2.24 0 5c0 3.75 5 7 5 7s5-3.25 5-7c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 5 3.5a1.5 1.5 0 0 1 0 3z" fill="currentColor"/></svg>
+            Toronto, Ontario, Canada
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Nav Cards -->
+    <section class="nav-section">
+      <p class="section-title animate-up-d3">// quick navigation</p>
+      <div class="nav-cards">
+        <a href="profile.html" class="nav-card animate-up-d1">
+          <div class="nav-card-icon">👤</div>
+          <div class="nav-card-title">Profile</div>
+          <div class="nav-card-desc">About me, background & professional summary</div>
+          <div class="nav-card-arrow">→ view profile</div>
+        </a>
+        <a href="experience.html" class="nav-card animate-up-d2">
+          <div class="nav-card-icon">💼</div>
+          <div class="nav-card-title">Experience</div>
+          <div class="nav-card-desc">Circle K, Medusind, Innova Systems</div>
+          <div class="nav-card-arrow">→ view experience</div>
+        </a>
+        <a href="skills.html" class="nav-card animate-up-d2">
+          <div class="nav-card-icon">⚡</div>
+          <div class="nav-card-title">Skills</div>
+          <div class="nav-card-desc">AWS, Azure, Linux, Docker, Networking & more</div>
+          <div class="nav-card-arrow">→ view skills</div>
+        </a>
+        <a href="education.html" class="nav-card animate-up-d3">
+          <div class="nav-card-icon">🎓</div>
+          <div class="nav-card-title">Education</div>
+          <div class="nav-card-desc">George Brown, Algoma, Gujarat University</div>
+          <div class="nav-card-arrow">→ view education</div>
+        </a>
+        <a href="projects.html" class="nav-card animate-up-d3">
+          <div class="nav-card-icon">🔧</div>
+          <div class="nav-card-title">Projects</div>
+          <div class="nav-card-desc">System config, M365, Contoso infrastructure</div>
+          <div class="nav-card-arrow">→ view projects</div>
+        </a>
+        <a href="certificates.html" class="nav-card animate-up-d4">
+          <div class="nav-card-icon">🏆</div>
+          <div class="nav-card-title">Certificates</div>
+          <div class="nav-card-desc">Cisco, Microsoft, and more credentials</div>
+          <div class="nav-card-arrow">→ view certificates</div>
+        </a>
+        <a href="assignments.html" class="nav-card animate-up-d4">
+          <div class="nav-card-icon">📚</div>
+          <div class="nav-card-title">Assignments</div>
+          <div class="nav-card-desc">11 labs — AWS, Azure, Windows Server & M365</div>
+          <div class="nav-card-arrow">→ view assignments</div>
+        </a>
+        <a href="hobbies.html" class="nav-card animate-up-d4">
+          <div class="nav-card-icon">🎯</div>
+          <div class="nav-card-title">Hobbies</div>
+          <div class="nav-card-desc">Traveling, cycling, gaming & beyond</div>
+          <div class="nav-card-arrow">→ view hobbies</div>
+        </a>
+        <a href="contact.html" class="nav-card animate-up-d5">
+          <div class="nav-card-icon">✉️</div>
+          <div class="nav-card-title">Contact</div>
+          <div class="nav-card-desc">Phone, email, LinkedIn — let's connect</div>
+          <div class="nav-card-arrow">→ get in touch</div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      © 2025 <a href="index.html">Ayush Shah</a> — Toronto, ON
+    </div>
+    <div class="footer-links">
+      <a href="mailto:ayush28shah@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/beayushman" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Ayush28shah" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
